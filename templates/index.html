@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrick's Internship Hub</title>
+    {% include 'bootstrap_css.html' %}
+    <style>
+        #banner {
+          height: 360px;
+          width: 100%;
+          object-fit:cover;
+          margin-bottom: 16px;
+        }
+        .center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        {% include "navbar.html" %}
+    </div>
+
+    <div class="container">
+        <img class="img-fluid" src="static/download.png" alt="the test" id="banner">
+    </div>
+
+    <div class="container center">
+        <h1 class="text-center mt-2 mb-4">{{ company_name }} Service</h1>
+        <p>This service is focused on providing students with readily available internship opportunities🤩</p>
+        <p>get the opportunity that might <strong>CHANGE YOUR LIFE!!!!</strong></p>
+    </div>
+
+    <div class="container">
+        
+        {% for job in jobs %}
+            {% include 'job_item.html' %}
+        {% endfor %}
+            
+    </div>
+
+    <div>
+        {% include 'footer.html' %}
+    </div>
+
+    {% include 'bootstrap_javaScript.html' %}
+</body>
+</html>

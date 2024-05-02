@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application has been submitted</title>
+    {% include 'bootstrap_css.html' %}
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <h1 class="text-center mt-3 mb-4">
+            Rodrick's internship Hub
+        </h1>
+        <p class="text-center">Your application for the role of "<strong>{{internship['title']}}</strong>" has been submitted</p>
+
+        <h4>Full Name</h4>
+        <div class="mb-2">{{application['full_name']}}</div>
+
+        <h4>E-mail</h4>
+        <div class="mb-2">{{application.email}}</div>
+
+        <h4>linkedIn URL</h4>
+        <div class="mb-2">{{application['linkedIn']}}</div>
+
+        <h4>Education</h4>
+        <div class="mb-2">{{application['education']}}</div>
+
+        <h4>Field Experience</h4>
+        <div class="mb-2">{{application['experience']}}</div>
+
+        <h4>Resume</h4>
+        <div class="mb-2">{{application['resume_url']}}</div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

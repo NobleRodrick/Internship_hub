@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{internship.title}} - Rodrick's Internship Hub</title>
+    {% include 'bootstrap_css.html' %}
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container center">
+        <h1 class="text-center mt-2 mb-4">{{company_name}} Service</h1>
+        
+        <h3 class="mb-2">{{internship.title}}</h3>
+        <p class="lead mt-0">{{internship.location}}</p>
+        <h3>Responsibilities</h3>
+        <ul>
+            
+            {% for line in internship.responsibilities.split("\n") %}
+                <li>{{line}}</li>
+            {% endfor %}
+                
+        </ul>
+        <h3>Requirements</h3>
+        <ol>
+            
+            {% for line in internship.requirements.split("\n") %}
+                <li>{{line}}</li>
+            {% endfor %}
+                
+        </ol>
+        <h3>Monthly stipend</h3>
+        <p>{{internship.currency}}{{internship.monthly_stipend}}</p>
+        {% include 'application_form.html' %}
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>
