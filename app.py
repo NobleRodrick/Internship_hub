@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for
+import json
 
 app = Flask(__name__)
 
@@ -8,7 +9,7 @@ Available_Internships = [
     {
     'id': 1,
     'title': 'system analyst',
-    'location': 'Bamenda, Cameron',
+    'location': 'Bamenda, Cameroon',
     'monthly_stipend': '100,000',
     'responsibilities': 'Responsibility 1\n Responsibility 2',
     'requirements': 'Requirement 1\n Requirement 2',
@@ -86,12 +87,12 @@ def internship_apply(id):
   internship = Available_Internships[id - 1]
   data = request.form
   if request.method == "POST":
-    name = data.full_name
-    email = data.email
-    linkedIn = data.linkedIn
-    education = data.education
-    experience = data.experience
-    resume = data.resume_url
+    name = data['full_name']
+    email = data['email']
+    linkedIn = data['linkedIn']
+    education = data['education']
+    experience = data['experience']
+    resume = data['resume_url']
     application_data.append({
       'name': name,
       'email': email,
@@ -105,8 +106,27 @@ def internship_apply(id):
 
 @app.route('/admin')
 def admin():
-  render_template('admin.html', applications=application_data)
+  json_data = jsonify(application_data)
+  render_template('admin.html', applications=json_data)
   
+  
+@app.route('/about')
+def about():
+  return render_template('about.html')
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+  if request.method == 'POST':
+        # Process signup form data here
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        # We could add users to database here but we have not yet found free hosting site!!
+        
+        # Redirecting to homepage after signup
+        return redirect(url_for('internships'))
+  return render_template('signup.html')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
