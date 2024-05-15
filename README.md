@@ -5,7 +5,7 @@
 Welcome to the Student Internship Hub! This project aims to provide a centralized platform for students to explore, apply, and track internship
 
 - Final Project Blog Article: [Link to Blog Article] https://www.linkedin.com/posts/alloh-nkefor-rodrick-ba080725b_excited-to-share-the-journey-of-creating-activity-7196398896292462592-WOD4?utm_source=share&utm_medium=member_ios
-- Author(s) LinkedIn : [Author LinkedIn Profile](https://linkedin.com/in/author)
+- Author(s) LinkedIn : [Author LinkedIn Profile](https://www.linkedin.com/in/alloh-nkefor-rodrick-ba080725b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 
 ![Student Internship Hub Screenshot](screenshot.png)
 
@@ -54,7 +54,7 @@ Contributions to the Student Internship Hub project are welcome! To contribute:
 ## Related Projects
 
 Check out these related projects:
-- [Internship Finder](https://github.com/example/internship-finder): A similar project for finding internships.
+- [Indeed](): A similar project for finding internships.
 
 ## Licensing
 
